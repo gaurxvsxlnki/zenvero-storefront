@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+:root {
+  /* Palette Tokens */
+  --bg-primary: #F3EFEA;
+  --bg-secondary: #ECE7E0;
+  --surface-raised: #F7F4F0;
+  --surface-clay: #FDFBF9;
+  --text-primary: #1E1D1B;
+  --text-secondary: #5C5852;
+  --text-muted: #8C867E;
+  --accent-primary: #2A5C4D;
+  --accent-primary-hover: #21493D;
+  --accent-soft: #E1ECE8;
+  --border-subtle: rgba(255, 255, 255, 0.72);
+  --border-dark: rgba(212, 205, 195, 0.45);
+
+  /* Neumorphic Shadow System (Structural Foundation) */
+  --neu-raised: 8px 8px 18px #DDD7CE, -8px -8px 18px #FFFFFF;
+  --neu-raised-sm: 4px 4px 10px #DED8CF, -4px -4px 10px #FFFFFF;
+  --neu-raised-hover: 12px 12px 24px #D8D1C7, -10px -10px 22px #FFFFFF;
+  --neu-inset: inset 5px 5px 11px #DAD4CB, inset -5px -5px 11px #FFFFFF;
+  --neu-inset-sm: inset 3px 3px 7px #DCD6CD, inset -3px -3px 7px #FFFFFF;
+
+  /* Claymorphic Shadow System (Sculptural Highlights & Covers) */
+  --clay-surface: linear-gradient(145deg, #FFFFFF 0%, #F4EFE8 100%);
+  --clay-accent: linear-gradient(145deg, #356F5E 0%, #244F42 100%);
+  --clay-shadow: 
+    14px 18px 32px rgba(176, 168, 156, 0.44),
+    -6px -6px 18px rgba(255, 255, 255, 0.9),
+    inset 3px 4px 8px rgba(255, 255, 255, 0.95),
+    inset -4px -6px 12px rgba(206, 198, 186, 0.48);
+  --clay-shadow-hover:
+    18px 22px 38px rgba(166, 158, 146, 0.52),
+    -8px -8px 20px rgba(255, 255, 255, 0.95),
+    inset 4px 5px 10px rgba(255, 255, 255, 1),
+    inset -5px -7px 14px rgba(196, 188, 176, 0.55);
+  --clay-book-frame:
+    10px 14px 24px rgba(158, 150, 138, 0.4),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.92),
+    inset -3px -4px 7px rgba(195, 187, 175, 0.45);
+  --clay-accent-shadow:
+    10px 14px 26px rgba(42, 92, 77, 0.32),
+    -4px -4px 12px rgba(255, 255, 255, 0.8),
+    inset 2px 3px 6px rgba(255, 255, 255, 0.38),
+    inset -3px -4px 8px rgba(22, 52, 43, 0.55);
+
+  /* Radius Tokens */
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 30px;
+  --radius-pill: 9999px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Neumorphic Structural Classes */
+.neu-chassis {
+  background-color: var(--bg-primary);
+  box-shadow: var(--neu-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.neu-card {
+  background-color: var(--surface-raised);
+  box-shadow: var(--neu-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.neu-card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--neu-raised-hover);
+}
+
+.neu-pill {
+  background-color: var(--bg-primary);
+  box-shadow: var(--neu-raised-sm);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.neu-pill:hover {
+  box-shadow: 6px 6px 14px #D8D1C7, -6px -6px 14px #FFFFFF;
+}
+
+.neu-pill:active,
+.neu-pill-active {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--neu-inset-sm);
+  border-color: transparent;
+}
+
+.neu-inset {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--neu-inset);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: var(--radius-md);
+}
+
+.neu-inset-sm {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--neu-inset-sm);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: var(--radius-sm);
+}
+
+.neu-btn {
+  background-color: var(--surface-raised);
+  box-shadow: var(--neu-raised-sm);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.neu-btn:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+  box-shadow: 6px 6px 14px #D8D1C7, -6px -6px 14px #FFFFFF;
+}
+
+.neu-btn:active:not(:disabled),
+.neu-btn-pressed {
+  transform: translateY(0.5px);
+  background-color: var(--bg-secondary);
+  box-shadow: var(--neu-inset-sm);
+}
+
+/* Claymorphic Sculptural Classes */
+.clay-pedestal {
+  background: var(--clay-surface);
+  box-shadow: var(--clay-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: var(--radius-lg);
+}
+
+.clay-tile {
+  background: var(--clay-surface);
+  box-shadow: var(--clay-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 26px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.clay-tile:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  box-shadow: var(--clay-shadow-hover);
+}
+
+.clay-cover-frame {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F1ECE4 100%);
+  box-shadow: var(--clay-book-frame);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.neu-card-interactive:hover .clay-cover-frame {
+  transform: translateY(-4px);
+}
+
+.clay-cta {
+  background: var(--clay-accent);
+  color: #FFFFFF;
+  box-shadow: var(--clay-accent-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.clay-cta:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    12px 16px 30px rgba(42, 92, 77, 0.4),
+    -4px -4px 12px rgba(255, 255, 255, 0.85),
+    inset 3px 4px 8px rgba(255, 255, 255, 0.45),
+    inset -3px -4px 8px rgba(22, 52, 43, 0.6);
+}
+
+.clay-cta:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow:
+    inset 4px 4px 10px rgba(18, 42, 35, 0.65),
+    inset -3px -3px 8px rgba(68, 134, 114, 0.4);
+}
+
+/* Subtle floating animation for claymorphic hero objects */
+@keyframes clayFloatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.6deg);
+  }
+}
+
+@keyframes clayFloatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(-0.8deg);
+  }
+}
+
+.animate-clay-float {
+  animation: clayFloatSlow 6.5s ease-in-out infinite;
+}
+
+.animate-clay-float-delayed {
+  animation: clayFloatReverse 7.5s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ECE7E0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CEC7BC;
+  border-radius: 9999px;
+  border: 2px solid #ECE7E0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8B0A4;
+}
