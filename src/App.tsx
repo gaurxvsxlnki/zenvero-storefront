@@ -104,13 +104,7 @@ export function App() {
 
   const [ownedItems, setOwnedItems] = useState<
     { ebookId: string; purchaseDate: string; orderId: string }[]
-  >([
-    {
-      ebookId: 'zv-001',
-      purchaseDate: '2025-02-18',
-      orderId: 'ORD-9482',
-    },
-  ]);
+  >([]);
 
   const [couponCode, setCouponCode] = useState<string>('');
   const [discountPercent, setDiscountPercent] = useState<number>(0);
@@ -555,6 +549,72 @@ export function App() {
 
   // Protected Digital Download Handler
   const handleProtectedDownload = async (ebook: Ebook) => {
+    // zv-001 MUST use the private vault. It must never fall through
+    // to the legacy TXT receipt/download behavior.
+    if (ebook.id === 'zv-001') {
+      const purchasedOrder = ownedItems.find(
+        (o) => o.ebookId === 'zv-001'
+      );
+
+      const hasPurchasedBook = lastPurchasedBooks.some(
+        (b) => b.id === 'zv-001'
+      );
+
+      const orderId =
+        purchasedOrder?.orderId ??
+        (latestOrder?.items.some(
+          (item) => item.ebookId === 'zv-001'
+        )
+          ? latestOrder.id
+          : '');
+
+      if (!hasPurchasedBook && !purchasedOrder) {
+        showToast(
+          'Access denied: Please complete purchase to unlock vault download.'
+        );
+        return;
+      }
+
+      if (!orderId) {
+        showToast(
+          'Access denied: Verified purchase order could not be found.'
+        );
+        return;
+      }
+
+      const outcome = await requestVaultDownload(
+        'zv-001',
+        orderId
+      );
+
+      if (outcome === 'ok') {
+        setDownloadHistory((prev) => [
+          {
+            title: ebook.title,
+            timestamp: new Date().toUTCString(),
+            format: 'PDF',
+          },
+          ...prev,
+        ]);
+        showToast(
+          'Downloading "The Calm Compounding Operator" PDF...'
+        );
+      } else if (outcome === 'unavailable') {
+        showToast(
+          'Vault asset not provisioned yet — put calm-compounding-operator-v4.pdf inside vault/ebooks/.'
+        );
+      } else if (outcome === 'denied') {
+        showToast(
+          'Access denied: Please complete purchase to unlock vault download.'
+        );
+      } else {
+        showToast('PDF download failed. Please try again.');
+      }
+
+      return;
+    }
+
+    // Existing demo behavior for all other ebooks remains unchanged.
     const isVerifiedOwner =
       ownedItems.some((o) => o.ebookId === ebook.id) ||
       lastPurchasedBooks.some((b) => b.id === ebook.id);
@@ -566,53 +626,6 @@ export function App() {
       return;
     }
 
-    // zv-001 is served only through the entitlement-checked vault endpoint.
-    // It is never read from ebook.pdfFile or a public/static URL.
-    if (isVaultProtected(ebook.id)) {
-      const purchasedOrder = ownedItems.find(
-        (o) => o.ebookId === ebook.id
-      );
-
-      if (!purchasedOrder) {
-        showToast(
-          'Access denied: Please complete purchase to unlock vault download.'
-        );
-        return;
-      }
-
-      const outcome = await requestVaultDownload(
-        ebook.id,
-        purchasedOrder.orderId
-      );
-
-      if (outcome === 'ok') {
-        setDownloadHistory((prev) => [
-          {
-            title: ebook.title,
-            timestamp: new Date().toUTCString(),
-            format: ebook.format,
-          },
-          ...prev,
-        ]);
-        showToast(
-          `Downloading "${ebook.title}" from the secure vault...`
-        );
-      } else if (outcome === 'denied') {
-        showToast(
-          'Access denied: Please complete purchase to unlock vault download.'
-        );
-      } else if (outcome === 'unavailable') {
-        showToast(
-          'Vault asset not provisioned yet — the edition PDF is missing on the server (vault/ebooks).'
-        );
-      } else {
-        showToast('Vault download failed. Please try again.');
-      }
-
-      return;
-    }
-
-    // Other editions retain their existing demo receipt behavior.
     const receiptContent = [
       `====================================================================`,
       `ZENVERO DIGITAL PRESS — VERIFIED MONOGRAPH EDITION`,
@@ -648,27 +661,13 @@ export function App() {
     );
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
-    const slug = ebook.title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-');
-
+    const slug = ebook.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     link.href = url;
     link.download = `ZenVero-${slug}-Edition.txt`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
-
-    setDownloadHistory((prev) => [
-      {
-        title: ebook.title,
-        timestamp: new Date().toUTCString(),
-        format: 'PDF',
-      },
-      ...prev,
-    ]);
-
-    showToast(`Downloading "${ebook.title}" PDF...`);
   };
 
   // Admin Catalog Handlers
