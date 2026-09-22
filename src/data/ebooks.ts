@@ -16,11 +16,8 @@ pages: string;
 }
 
 export interface PreviewSpread {
-pageNumber: number;
-chapterTitle: string;
-heading: string;
-content: string;
-keyTakeaway: string;
+  pageNumber: number;
+  image: string;
 }
 
 export interface Ebook {
@@ -309,33 +306,18 @@ number: '03',
 },
 ],
 preview: [
-{
-pageNumber: 14,
-chapterTitle: 'Chapter 01 — TheArchitecture of Quiet Leverage',
-heading: 'Complexity Is a Hidden Tax on Every Decision',
-content:
-'Every time you introduce an unvetted tool, an ambiguous recurring meeting, or a bespoke client exception, you borrow against future clarity. Calm operators treat organizational surface area like physical architecture: every beam must bear load, or it is removed.',
-keyTakeaway:
-'Audit your weekly calendar not by hours spent, but by how many context switches fracture a four-hour synthesis block.',
-},
-{
-pageNumber: 58,
-chapterTitle: 'Chapter 02 — Asynchronous Cadence',
-heading: 'The Two-Paragraph Problem Statement',
-content:
-'Before any team member requests a synchronous review, they write two paragraphs: first, the exact constraint encountered in customer language; second, the default course of action they will execute in 24 hours if no objection is raised.',
-keyTakeaway:
-'Default-to-action protocols eliminate 78% of internal bottlenecks within two weeks of adoption.',
-},
-{
-pageNumber: 112,
-chapterTitle: 'Chapter 03 — Pricing for Margin',
-heading: 'Why Underpricing Creates Support Debt',
-content:
-'Discounted products attract high-friction expectations. Premium positioning filters for self-directed buyers who value precision, read documentation, and implement frameworks rigorously.',
-keyTakeaway:
-'Raise your anchor price by 30% while adding a tangible implementation template—conversion rarely drops, and retention doubles.',
-},
+  {
+    pageNumber: 1,
+    image: '/previews/demo/preview-1.jpg',
+  },
+  {
+    pageNumber: 2,
+    image: '/previews/demo/preview-2.jpg',
+  },
+  {
+    pageNumber: 3,
+    image: '/previews/demo/preview-3.jpg',
+  },
 ],
 },
 {
@@ -401,24 +383,18 @@ pages: 'pp. 239 – 312',
 },
 ],
 preview: [
-{
-pageNumber: 22,
-chapterTitle: 'Chapter 01 — Beyond the Chat Box',
-heading: 'Interfaces That Respect Cognitive Load',
-content:
-'Asking users to write prose prompts from scratch every morning is poor industrial design. Superior AI tools extract structure silently from existing artifacts and present crisp, inspectable diffs.',
-keyTakeaway:
-'Replace open-ended text boxes with constrained semantic lenses.',
-},
-{
-pageNumber: 89,
-chapterTitle: 'Chapter 02 — Deterministic Schema Contracts',
-heading: 'Never Trust Unvalidated Generation',
-content:
-'Treat every model inference like an untrusted network socket. Parse outputs through strict validators and feed validation errors back into a single micro-repair turn.',
-keyTakeaway:
-'Single-turn schema repair brings structured reliability from 86% to 99.7%.',
-},
+  {
+    pageNumber: 1,
+    image: '/previews/demo/preview-1.jpg',
+  },
+  {
+    pageNumber: 2,
+    image: '/previews/demo/preview-2.jpg',
+  },
+  {
+    pageNumber: 3,
+    image: '/previews/demo/preview-3.jpg',
+  },
 ],
 },
 {
@@ -478,15 +454,18 @@ pages: 'pp. 119 – 216',
 },
 ],
 preview: [
-{
-pageNumber: 19,
-chapterTitle: 'Chapter 01 — The Anatomy of Taste',
-heading: 'Whisper When Competitors Shout',
-content:
-'When every landing page screams in neon gradients and exclamation marks, a quiet alabaster surface with measured typography commands instant authority. Confidence never begs for attention.',
-keyTakeaway:
-'Remove 40% of adjectives from your homepage; replace them with verifiable mechanisms.',
-},
+  {
+    pageNumber: 1,
+    image: '/previews/demo/preview-1.jpg',
+  },
+  {
+    pageNumber: 2,
+    image: '/previews/demo/preview-2.jpg',
+  },
+  {
+    pageNumber: 3,
+    image: '/previews/demo/preview-3.jpg',
+  },
 ],
 },
 {
@@ -546,15 +525,18 @@ pages: 'pp. 113 – 184',
 },
 ],
 preview: [
-{
-pageNumber: 31,
-chapterTitle: 'Chapter 01 — Mining Expensive Problems',
-heading: 'Specificity Beats Breadth Every Time',
-content:
-'Nobody pays premium prices for a general guide to freelance management. They gladly pay $45 for a 90-page legal and scoping handbook specifically tailored to independent industrial designers.',
-keyTakeaway:
-'Narrow your audience by half to double the perceived utility of your edition.',
-},
+  {
+    pageNumber: 1,
+    image: '/previews/demo/preview-1.jpg',
+  },
+  {
+    pageNumber: 2,
+    image: '/previews/demo/preview-2.jpg',
+  },
+  {
+    pageNumber: 3,
+    image: '/previews/demo/preview-3.jpg',
+  },
 ],
 },
 {
@@ -612,15 +594,18 @@ pages: 'pp. 135 – 198',
 },
 ],
 preview: [
-{
-pageNumber: 17,
-chapterTitle: 'Chapter 01 — Visual Silence',
-heading: 'Every Unread Badge Is an Open Loop',
-content:
-'Your visual cortex processes peripheral movement and red notification badges even while you believe you are concentrating. True focus requires mono-task viewports.',
-keyTakeaway:
-'Separate your communication terminal from your creation workstation.',
-},
+  {
+    pageNumber: 1,
+    image: '/previews/demo/preview-1.jpg',
+  },
+  {
+    pageNumber: 2,
+    image: '/previews/demo/preview-2.jpg',
+  },
+  {
+    pageNumber: 3,
+    image: '/previews/demo/preview-3.jpg',
+  },
 ],
 },
 {
@@ -672,15 +657,18 @@ pages: 'pp. 75 – 178',
 },
 ],
 preview: [
-{
-pageNumber: 40,
-chapterTitle: 'Chapter 01 — Runway as Creative Oxygen',
-heading: 'Never Negotiate from a Short Runway',
-content:
-'The highest-returning asset on your balance sheet is the ability to walk away from misaligned partnerships without financial anxiety.',
-keyTakeaway:
-'Hold 18 months of baseline operating expenses in sovereign short-duration instruments.',
-},
+  {
+    pageNumber: 1,
+    image: '/previews/demo/preview-1.jpg',
+  },
+  {
+    pageNumber: 2,
+    image: '/previews/demo/preview-2.jpg',
+  },
+  {
+    pageNumber: 3,
+    image: '/previews/demo/preview-3.jpg',
+  },
 ],
 },
 {
@@ -732,15 +720,18 @@ pages: 'pp. 83 – 228',
 },
 ],
 preview: [
-{
-pageNumber: 28,
-chapterTitle: 'Chapter 01 — Scoping Problems',
-heading: 'Senior Solves Assigned Tasks; Principal Defines the Map',
-content:
-'The transition to Principal happens the day you stop waiting for well-groomed tickets and start translating ambiguous executive anxiety into concrete technical roadmaps.',
-keyTakeaway:
-'Publish one unsolicited synthesis memo every quarter addressing an unowned friction point.',
-},
+  {
+    pageNumber: 1,
+    image: '/previews/demo/preview-1.jpg',
+  },
+  {
+    pageNumber: 2,
+    image: '/previews/demo/preview-2.jpg',
+  },
+  {
+    pageNumber: 3,
+    image: '/previews/demo/preview-3.jpg',
+  },
 ],
 },
 {
@@ -792,15 +783,18 @@ pages: 'pp. 95 – 276',
 },
 ],
 preview: [
-{
-pageNumber: 12,
-chapterTitle: 'Chapter 01 — Profit First Day One',
-heading: 'Optionality Is Owned by Those Who Do Not Need Money',
-content:
-'When your customers fund your payroll, you never have to compromise product integrity to satisfy a short-term board milestone.',
-keyTakeaway:
-'Charge from beta day one; feedback from non-paying users skews your roadmap.',
-},
+  {
+    pageNumber: 1,
+    image: '/previews/demo/preview-1.jpg',
+  },
+  {
+    pageNumber: 2,
+    image: '/previews/demo/preview-2.jpg',
+  },
+  {
+    pageNumber: 3,
+    image: '/previews/demo/preview-3.jpg',
+  },
 ],
 },
 ];

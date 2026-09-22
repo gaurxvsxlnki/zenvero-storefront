@@ -54,13 +54,9 @@ export const EbookDetailsView: React.FC<EbookDetailsViewProps> = ({
     ebook.preview && ebook.preview.length > 0
       ? ebook.preview
       : [
-          {
-            pageNumber: 12,
-            chapterTitle: 'Chapter 01 — Executive Synthesis',
-            heading: ebook.title,
-            content: ebook.longDescription || ebook.description,
-            keyTakeaway: 'Practical frameworks designed for immediate implementation.',
-          },
+          { pageNumber: 1, image: '/previews/demo/preview-1.jpg' },
+          { pageNumber: 2, image: '/previews/demo/preview-2.jpg' },
+          { pageNumber: 3, image: '/previews/demo/preview-3.jpg' },
         ];
 
   const currentSpread = spreads[activeSpreadIndex] || spreads[0];
@@ -363,27 +359,27 @@ export const EbookDetailsView: React.FC<EbookDetailsViewProps> = ({
           </div>
         </div>
 
-        {/* Sample Page Spread Display */}
+        {/* Sample Page Spread Display — rendered as a JPG preview image */}
         <div className="clay-pedestal p-6 sm:p-10 max-w-4xl mx-auto">
           <div className="flex items-center justify-between text-xs font-mono-tech text-[#8C867E] pb-4 mb-6 border-b border-[#DED8CF]">
-            <span>{currentSpread.chapterTitle}</span>
+            <span className="uppercase tracking-widest">ZenVero Sample Preview</span>
             <span>PAGE {currentSpread.pageNumber}</span>
           </div>
 
-          <h3 className="font-display font-bold text-xl sm:text-2xl text-[#1E1D1B] mb-4">
-            {currentSpread.heading}
-          </h3>
-
-          <p className="text-base text-[#5C5852] leading-relaxed mb-6">
-            {currentSpread.content}
-          </p>
-
-          <div className="neu-inset p-5 border-l-4 border-l-[#2A5C4D]">
-            <span className="text-[10px] font-mono-tech uppercase tracking-widest text-[#2A5C4D] block mb-1">
-              Field Note / Key Takeaway
-            </span>
-            <p className="text-sm font-medium text-[#1E1D1B]">{currentSpread.keyTakeaway}</p>
-          </div>
+          {/* Framed preview page — image keeps its native aspect ratio, never stretched */}
+          <figure className="neu-inset p-3 sm:p-5 m-0">
+            <div className="rounded-[14px] overflow-hidden bg-[#DCD5CA]/60 border border-white/70 shadow-inner flex items-center justify-center min-h-[280px] sm:min-h-[400px]">
+              <img
+                src={currentSpread.image}
+                alt={`${ebook.title} — sample preview page ${currentSpread.pageNumber}`}
+                loading="lazy"
+                className="block w-auto h-auto max-w-full max-h-[62vh] sm:max-h-[70vh] object-contain rounded-[10px] select-none"
+              />
+            </div>
+            <figcaption className="pt-3 text-center font-mono-tech text-[11px] text-[#8C867E]">
+              Sample page {activeSpreadIndex + 1} of {spreads.length} • {ebook.format}
+            </figcaption>
+          </figure>
         </div>
       </section>
 

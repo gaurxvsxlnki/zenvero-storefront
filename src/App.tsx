@@ -389,12 +389,11 @@ export function App() {
       `${ebook.longDescription || ebook.description}`,
       ``,
       `--------------------------------------------------------------------`,
-      `SAMPLE CHAPTER EXCERPT`,
+      `SAMPLE PREVIEW PAGES`,
       `--------------------------------------------------------------------`,
-      `${ebook.preview?.[0]?.heading || ebook.title}`,
-      `${ebook.preview?.[0]?.content || ''}`,
-      ``,
-      `Key Takeaway: ${ebook.preview?.[0]?.keyTakeaway || ''}`,
+      ...(ebook.preview || []).map(
+        (spread) => `Page ${spread.pageNumber}: ${spread.image}`
+      ),
       `====================================================================`,
     ].join('\n');
 

@@ -137,25 +137,20 @@ export const LibraryView: React.FC<LibraryViewProps> = ({
           <div className="space-y-6">
             <div className="clay-pedestal p-6 sm:p-8 space-y-4">
               <div className="flex items-center justify-between text-xs font-mono-tech text-[#8C867E] pb-3 border-b border-[#DED8CF]">
-                <span>{readerBook.preview?.[0]?.chapterTitle || 'Chapter 01'}</span>
+                <span>
+                  PAGE {readerBook.preview?.[0]?.pageNumber ?? 1} OF{' '}
+                  {readerBook.preview?.length ?? 0}
+                </span>
                 <span>ZENVERO WEB READER</span>
               </div>
-              <h4 className="font-display font-bold text-xl text-[#1E1D1B]">
-                {readerBook.preview?.[0]?.heading || readerBook.subtitle}
-              </h4>
-              <p className="text-sm sm:text-base text-[#5C5852] leading-relaxed">
-                {readerBook.preview?.[0]?.content || readerBook.longDescription}
-              </p>
-              {readerBook.preview?.[0]?.keyTakeaway && (
-                <div className="neu-inset p-4 border-l-4 border-l-[#2A5C4D]">
-                  <span className="text-[10px] font-mono-tech uppercase text-[#2A5C4D] block mb-1">
-                    Key Takeaway
-                  </span>
-                  <p className="text-xs sm:text-sm font-medium text-[#1E1D1B]">
-                    {readerBook.preview[0].keyTakeaway}
-                  </p>
-                </div>
-              )}
+              <div className="rounded-[14px] overflow-hidden bg-[#DCD5CA]/60 border border-white/70 flex items-center justify-center min-h-[240px]">
+                <img
+                  src={readerBook.preview?.[0]?.image}
+                  alt={`${readerBook.title} — preview page ${readerBook.preview?.[0]?.pageNumber ?? 1}`}
+                  loading="lazy"
+                  className="block w-auto h-auto max-w-full max-h-[56vh] object-contain rounded-[10px] select-none"
+                />
+              </div>
             </div>
 
             <div className="flex items-center justify-end gap-3">

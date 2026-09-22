@@ -56,9 +56,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=900&q=85'
   );
   const [pdfFileName, setPdfFileName] = useState('edition-manuscript-v1.pdf');
-  const [previewExcerpt, setPreviewExcerpt] = useState(
-    'Every durable system begins by eliminating unnecessary moving parts before scaling execution.'
-  );
+  const [previewImages, setPreviewImages] = useState<string[]>([
+    '/previews/demo/preview-1.jpg',
+    '/previews/demo/preview-2.jpg',
+    '/previews/demo/preview-3.jpg',
+  ]);
   const [featured, setFeatured] = useState(true);
   const [bestSeller, setBestSeller] = useState(false);
   const [newRelease, setNewRelease] = useState(true);
@@ -77,9 +79,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=85'
     );
     setPdfFileName('zenvero-new-edition.pdf');
-    setPreviewExcerpt(
-      'A high-signal excerpt from Chapter 01 demonstrating practical implementation principles.'
-    );
+    setPreviewImages([
+      '/previews/demo/preview-1.jpg',
+      '/previews/demo/preview-2.jpg',
+      '/previews/demo/preview-3.jpg',
+    ]);
     setFeatured(true);
     setBestSeller(false);
     setNewRelease(true);
@@ -98,9 +102,11 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     setPages(String(book.pages));
     setCoverImage(book.coverImage);
     setPdfFileName(book.pdfFile.replace('vault://zenvero-editions/', ''));
-    setPreviewExcerpt(
-      book.preview?.[0]?.content || book.description
-    );
+    const loadedImages = (book.preview || []).map((spread) => spread.image);
+    while (loadedImages.length < 3) {
+      loadedImages.push(`/previews/demo/preview-${loadedImages.length + 1}.jpg`);
+    }
+    setPreviewImages(loadedImages.slice(0, 3));
     setFeatured(book.featured);
     setBestSeller(book.bestSeller);
     setNewRelease(book.newRelease);
@@ -183,15 +189,10 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
           pages: `pp. 65 – ${numericPages}`,
         },
       ],
-      preview: [
-        {
-          pageNumber: 14,
-          chapterTitle: 'Chapter 01 — Executive Preview',
-          heading: title.trim(),
-          content: previewExcerpt,
-          keyTakeaway: 'Immediate operational clarity with zero fluff.',
-        },
-      ],
+      preview: previewImages.slice(0, 3).map((image, idx) => ({
+        pageNumber: idx + 1,
+        image: image.trim() || `/previews/demo/preview-${idx + 1}.jpg`,
+      })),
     };
 
     onSaveEbook(newBook, !!editingBook);
@@ -652,17 +653,30 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                 />
               </div>
 
-              {/* Sample Preview Excerpt */}
+              {/* Preview Pages — JPG image paths shown to readers before purchase */}
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-wider text-[#5C5852] mb-2">
-                  Preview [Sample Excerpt Shown to Readers Before Purchase]
+                  Preview Pages [Sample JPGs Shown to Readers Before Purchase]
                 </label>
-                <textarea
-                  rows={2}
-                  value={previewExcerpt}
-                  onChange={(e) => setPreviewExcerpt(e.target.value)}
-                  className="w-full neu-inset-sm p-4 text-sm text-[#1E1D1B] placeholder-[#8C867E] focus:outline-none"
-                />
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {previewImages.map((img, idx) => (
+                    <Input
+                      key={idx}
+                      label={`Sample Page ${idx + 1}`}
+                      value={img}
+                      onChange={(e) =>
+                        setPreviewImages((prev) =>
+                          prev.map((p, i) => (i === idx ? e.target.value : p))
+                        )
+                      }
+                      placeholder={`/previews/zv-001/preview-${idx + 1}.jpg`}
+                    />
+                  ))}
+                </div>
+                <p className="mt-2 text-xs text-[#8C867E]">
+                  Replace these paths with per-edition JPGs (e.g. /previews/zv-001/preview-1.jpg)
+                  once real preview artwork is uploaded to /public/previews.
+                </p>
               </div>
 
               {/* Neumorphic Tactile Toggles: Featured, Best Seller, New Release */}
