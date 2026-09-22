@@ -37,6 +37,11 @@ import {
   WishlistView,
 } from './components/store/UserViews';
 import { AdminPortal } from './components/admin/AdminPortal';
+import {
+  isVaultProtected,
+  registerVerifiedOrder,
+  requestVaultDownload,
+} from './utils/vaultDownload';
 
 const getViewFromHash = (): PageView | null => {
   if (typeof window === 'undefined') return null;
@@ -500,6 +505,15 @@ export function App() {
     setLastPurchasedBooks(cartItems);
     setLatestOrder(newOrder);
 
+    // Register the verified purchase with the vault server so it will mint
+    // signed download entitlements for these editions. DEMO: this is the
+    // stand-in for the payment provider's webhook; production verifies the
+    // payment server-side instead of trusting this client call.
+    await registerVerifiedOrder(
+      orderId,
+      newOrder.items.map((item) => item.ebookId)
+    );
+
     // Unlock purchased editions in user's My Library
     setOwnedItems((prev) => {
       const existingIds = new Set(
@@ -539,6 +553,7 @@ export function App() {
     );
   };
 
+<<<<<<< HEAD
   // ============================================================
   // PROTECTED DIGITAL PDF DOWNLOAD
   // ============================================================
@@ -556,6 +571,10 @@ export function App() {
   const handleProtectedDownload = (
     ebook: Ebook
   ) => {
+=======
+  // Protected Digital Download Handler (Only works for verified owned editions)
+  const handleProtectedDownload = async (ebook: Ebook) => {
+>>>>>>> origin/arena/01a0c998-zenvero-storefront
     const isVerifiedOwner =
       ownedItems.some(
         (o) => o.ebookId === ebook.id
@@ -571,6 +590,7 @@ export function App() {
       return;
     }
 
+<<<<<<< HEAD
     let pdfPath = '';
 
     // Real uploaded PDF for Calm Compounding Operator
@@ -605,6 +625,82 @@ export function App() {
         : `${ebook.title
             .replace(/[^a-z0-9]+/gi, '-')
             .replace(/^-+|-+$/g, '')}.pdf`;
+=======
+    // ------------------------------------------------------------------
+    // Vault-protected editions (zv-001): the PDF is fetched from the
+    // entitlement-checked vault endpoint — NEVER from ebook.pdfFile or any
+    // public/static URL. The request carries the verified order id; the
+    // server re-verifies that order purchased this edition (and the signed
+    // token) before exposing a single byte of the PDF.
+    // ------------------------------------------------------------------
+    if (isVaultProtected(ebook.id)) {
+      const purchasedOrder = ownedItems.find((o) => o.ebookId === ebook.id);
+      if (!purchasedOrder) {
+        showToast(
+          'Access denied: Please complete purchase to unlock vault download.'
+        );
+        return;
+      }
+
+      const outcome = await requestVaultDownload(
+        ebook.id,
+        purchasedOrder.orderId
+      );
+
+      if (outcome === 'ok') {
+        setDownloadHistory((prev) => [
+          {
+            title: ebook.title,
+            timestamp: new Date().toUTCString(),
+            format: ebook.format,
+          },
+          ...prev,
+        ]);
+        showToast(`Downloading "${ebook.title}" from the secure vault...`);
+      } else if (outcome === 'denied') {
+        showToast(
+          'Access denied: Please complete purchase to unlock vault download.'
+        );
+      } else if (outcome === 'unavailable') {
+        showToast(
+          'Vault asset not provisioned yet — the edition PDF is missing on the server (vault/ebooks).'
+        );
+      } else {
+        showToast('Vault download failed. Please try again.');
+      }
+      return;
+    }
+
+    // Other editions keep their existing behavior (receipt handoff).
+    const receiptContent = [
+      `====================================================================`,
+      `ZENVERO DIGITAL PRESS — VERIFIED MONOGRAPH EDITION`,
+      `Practical knowledge. Beautifully packaged.`,
+      `====================================================================`,
+      ``,
+      `TITLE:       ${ebook.title}`,
+      `SUBTITLE:    ${ebook.subtitle}`,
+      `AUTHOR:      ${ebook.author} (${ebook.authorRole})`,
+      `CATEGORY:    ${ebook.category}`,
+      `LENGTH:      ${ebook.pages} Pages`,
+      `FORMAT:      ${ebook.format}`,
+      `LICENSE:     Personal DRM-Free Patron Copy (${userProfile.email})`,
+      `ISSUED AT:   ${new Date().toUTCString()}`,
+      ``,
+      `--------------------------------------------------------------------`,
+      `EDITORIAL SYNOPSIS`,
+      `--------------------------------------------------------------------`,
+      `${ebook.longDescription || ebook.description}`,
+      ``,
+      `--------------------------------------------------------------------`,
+      `SAMPLE PREVIEW PAGES`,
+      `--------------------------------------------------------------------`,
+      ...(ebook.preview || []).map(
+        (spread) => `Page ${spread.pageNumber}: ${spread.image}`
+      ),
+      `====================================================================`,
+    ].join('\n');
+>>>>>>> origin/arena/01a0c998-zenvero-storefront
 
     document.body.appendChild(link);
     link.click();

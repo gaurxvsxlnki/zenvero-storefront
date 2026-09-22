@@ -1,6 +1,10 @@
-﻿node_modules/
+node_modules/
 dist/
 .env
 .env.*
 !.env.example
 .freebuff/
+
+# Paid vault assets — never commit the real PDFs
+vault/ebooks/*
+!vault/ebooks/.gitkeep
