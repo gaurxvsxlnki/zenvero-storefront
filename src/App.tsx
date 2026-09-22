@@ -38,7 +38,6 @@ import {
 } from './components/store/UserViews';
 import { AdminPortal } from './components/admin/AdminPortal';
 import {
-  isVaultProtected,
   registerVerifiedOrder,
   requestVaultDownload,
 } from './utils/vaultDownload';
