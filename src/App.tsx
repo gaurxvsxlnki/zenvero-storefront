@@ -444,7 +444,7 @@ export function App() {
   };
 
   // Checkout & Verified Purchase Completion
-  const handleCompletePurchase = (
+  const handleCompletePurchase = async (
     customerName: string,
     customerEmail: string
   ) => {
@@ -553,35 +553,11 @@ export function App() {
     );
   };
 
-<<<<<<< HEAD
-  // ============================================================
-  // PROTECTED DIGITAL PDF DOWNLOAD
-  // ============================================================
-  //
-  // IMPORTANT:
-  // This now downloads the REAL PDF file.
-  // It no longer creates a fake TXT receipt.
-  //
-  // Calm Compounding PDF location:
-  // public/ebooks/the-calm-compounding-operator.pdf
-  //
-  // Browser URL:
-  // /ebooks/the-calm-compounding-operator.pdf
-  // ============================================================
-  const handleProtectedDownload = (
-    ebook: Ebook
-  ) => {
-=======
-  // Protected Digital Download Handler (Only works for verified owned editions)
+  // Protected Digital Download Handler
   const handleProtectedDownload = async (ebook: Ebook) => {
->>>>>>> origin/arena/01a0c998-zenvero-storefront
     const isVerifiedOwner =
-      ownedItems.some(
-        (o) => o.ebookId === ebook.id
-      ) ||
-      lastPurchasedBooks.some(
-        (b) => b.id === ebook.id
-      );
+      ownedItems.some((o) => o.ebookId === ebook.id) ||
+      lastPurchasedBooks.some((b) => b.id === ebook.id);
 
     if (!isVerifiedOwner) {
       showToast(
@@ -590,51 +566,13 @@ export function App() {
       return;
     }
 
-<<<<<<< HEAD
-    let pdfPath = '';
-
-    // Real uploaded PDF for Calm Compounding Operator
-    if (ebook.id === 'zv-001') {
-      pdfPath =
-        '/ebooks/the-calm-compounding-operator.pdf';
-    } else {
-      // For other ebooks, use the pdfFile value
-      // only when it is a normal website path.
-      if (
-        ebook.pdfFile &&
-        ebook.pdfFile.startsWith('/')
-      ) {
-        pdfPath = ebook.pdfFile;
-      }
-    }
-
-    if (!pdfPath) {
-      showToast(
-        `${ebook.title} PDF is not uploaded yet.`
-      );
-      return;
-    }
-
-    const link =
-      document.createElement('a');
-
-    link.href = pdfPath;
-    link.download =
-      ebook.id === 'zv-001'
-        ? 'The-Calm-Compounding-Operator.pdf'
-        : `${ebook.title
-            .replace(/[^a-z0-9]+/gi, '-')
-            .replace(/^-+|-+$/g, '')}.pdf`;
-=======
-    // ------------------------------------------------------------------
-    // Vault-protected editions (zv-001): the PDF is fetched from the
-    // entitlement-checked vault endpoint — NEVER from ebook.pdfFile or any
-    // public/static URL. The request carries the verified order id; the
-    // server re-verifies that order purchased this edition (and the signed
-    // token) before exposing a single byte of the PDF.
-    // ------------------------------------------------------------------
+    // zv-001 is served only through the entitlement-checked vault endpoint.
+    // It is never read from ebook.pdfFile or a public/static URL.
     if (isVaultProtected(ebook.id)) {
-      const purchasedOrder = ownedItems.find((o) => o.ebookId === ebook.id);
+      const purchasedOrder = ownedItems.find(
+        (o) => o.ebookId === ebook.id
+      );
+
       if (!purchasedOrder) {
         showToast(
           'Access denied: Please complete purchase to unlock vault download.'
@@ -656,7 +594,9 @@ export function App() {
           },
           ...prev,
         ]);
-        showToast(`Downloading "${ebook.title}" from the secure vault...`);
+        showToast(
+          `Downloading "${ebook.title}" from the secure vault...`
+        );
       } else if (outcome === 'denied') {
         showToast(
           'Access denied: Please complete purchase to unlock vault download.'
@@ -668,10 +608,11 @@ export function App() {
       } else {
         showToast('Vault download failed. Please try again.');
       }
+
       return;
     }
 
-    // Other editions keep their existing behavior (receipt handoff).
+    // Other editions retain their existing demo receipt behavior.
     const receiptContent = [
       `====================================================================`,
       `ZENVERO DIGITAL PRESS — VERIFIED MONOGRAPH EDITION`,
@@ -700,25 +641,34 @@ export function App() {
       ),
       `====================================================================`,
     ].join('\n');
->>>>>>> origin/arena/01a0c998-zenvero-storefront
 
+    const blob = new Blob(
+      [receiptContent],
+      { type: 'text/plain;charset=utf-8' }
+    );
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    const slug = ebook.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-');
+
+    link.href = url;
+    link.download = `ZenVero-${slug}-Edition.txt`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    URL.revokeObjectURL(url);
 
     setDownloadHistory((prev) => [
       {
         title: ebook.title,
-        timestamp:
-          new Date().toUTCString(),
+        timestamp: new Date().toUTCString(),
         format: 'PDF',
       },
       ...prev,
     ]);
 
-    showToast(
-      `Downloading "${ebook.title}" PDF...`
-    );
+    showToast(`Downloading "${ebook.title}" PDF...`);
   };
 
   // Admin Catalog Handlers
