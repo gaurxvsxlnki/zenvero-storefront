@@ -69,9 +69,11 @@ export function App() {
   const [orders, setOrders] = useState<OrderRecord[]>(INITIAL_ORDERS);
 
   // Navigation & Selected Product State — route-aware initialization
+  // A bare visit (no hash) lands on the storefront home; the Publisher Studio
+  // stays reachable via the navbar, footer, mobile drawer and #admin.
   const [currentView, setCurrentView] = useState<PageView>(() => {
     const hashView = getViewFromHash();
-    return hashView || 'admin';
+    return hashView || 'home';
   });
   const [selectedEbookId, setSelectedEbookId] = useState<string>(INITIAL_EBOOKS[0].id);
   const [heroBookId, setHeroBookId] = useState<string>(INITIAL_EBOOKS[0].id);
