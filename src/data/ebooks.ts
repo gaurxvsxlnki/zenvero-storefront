@@ -543,12 +543,12 @@ preview: [
 id: 'zv-005',
 title: 'Cognitive Ergonomics',
 subtitle: 'Structuring Deep Work, Physical Space, and Digital Tools for Peak Synthesis',
-author: 'Kenji Takahashi',
-authorRole: 'Industrial Designer & Researcher in Human-Computer Interaction',
+author: 'ZenVero Editorial Studio',
+authorRole: 'Editorial Studio',
 description:
-'Redesign your desk, file hierarchy, reading workflows, and energy rhythms for sustained four-hour creative output.',
+'A practical operating system for designing the physical workspace, digital environment, knowledge workflow, and energy rhythms required for sustained deep work — from environmental silence to a structured 7-day cognitive reset.',
 longDescription:
-'Productivity is rarely a willpower problem—it is an environmental friction problem. Kenji Takahashi blends Japanese studio craft with cognitive science to help you calibrate your digital workspace, eliminate visual noise, and preserve mental stamina for your highest-value thinking.',
+'Book 05 of the System Architecture Series (Edition No. 05). Cognitive Ergonomics is a practical operating system for designing the physical workspace, digital environment, knowledge workflow, and energy rhythms required for sustained deep work. Its core thesis: "Productivity is rarely only a willpower problem—it is an environmental friction problem." The system is built for writers, researchers, programmers, designers, architects, engineers, students, and other knowledge workers who need sustained concentration and better control over fragmented digital workflows — a practical systems and operations guide, not generic motivational advice. "Silence the room and the screen before attempting to organize thoughts. Clean physical and digital geometry precedes profound synthesis." The four chapters are sequenced as one architecture: Chapter 01 establishes external visual and spatial silence (workspace audits, desk architecture, badge eradication, a 4-tier file hierarchy); Chapter 02 constructs internal knowledge architecture with a simplified Zettelkasten ledger that converts captured information into permanent knowledge assets using Markdown and plain-text workflows; Chapter 03 aligns work with biological energy through energy-aware scheduling and structured 90-minute focus sprints; Chapter 04 provides the tactical 7-day cognitive ergonomics reset. Reduce environmental and digital friction, build a distraction-resistant workspace, match demanding work with available energy, and protect deep work from context switching.',
 category: 'Productivity',
 coverImage:
 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=900&q=85',
@@ -570,27 +570,43 @@ bestSeller: false,
 newRelease: true,
 createdAt: '2025-02-12',
 whoIsThisFor: [
-'Architects, writers, and programmers who rely on uninterrupted mental synthesis',
-'Knowledge workers recovering from chronic digital fragmentation',
+'Writers and authors',
+'Researchers',
+'Programmers and developers',
+'Designers',
+'Architects and engineers',
+'Students',
+'Independent creators',
+'Knowledge workers managing complex information and digital workflows',
 ],
 chapters: [
 {
 number: '01',
 title: 'Visual Silence & Desktop Architecture',
-summary: 'Removing micro-distractions from your operating environment.',
-pages: 'pp. 01 – 62',
+summary:
+'Sequenced from external friction to verified calm: The Anatomy of Environmental Friction (pp. 06–07) on willpower vs space and micro-distractions & cognitive leaks; Physical Desk Architecture (pp. 08–12) covering the three perceptual zones, dual-surface desks, and lighting & clearance; Digital Desktop Architecture (pp. 13–18) treating the desktop as mind projection, badge eradication, and the 4-tier file hierarchy; Workspace Audits & Diagnostics (pp. 19–22) with the 60-minute detox, physical & digital scorecards, and the monastic baseline.',
+pages: 'pp. 06 – 22',
 },
 {
 number: '02',
 title: 'The Zettelkasten Ledger Simplified',
-summary: 'A low-maintenance plain-text note ecosystem that actually compounds.',
-pages: 'pp. 63 – 134',
+summary:
+'From accumulation to synthesis: The Collector’s Fallacy (pp. 23–25) on accumulation vs synthesis and the knowledge conversion cycle; The Atomic Note Standard (pp. 26–28) defining the anatomy of single ideas and the three-tier note taxonomy; Capture to Permanent Synthesis (pp. 29–33) moving notes from fleeting inbox through literature translation to permanent assets; Plain-Text Infrastructure & Workflows (pp. 34–38) with Markdown sovereignty, the 4-step reading pipeline, and ledger setup; Cadence & Review (pp. 39–40) on daily ledger checklists and the active compiler paradigm.',
+pages: 'pp. 23 – 40',
 },
 {
 number: '03',
-title: 'Circadian Ultradian Sprints',
-summary: 'Matching analytical and creative work to biological alertness windows.',
-pages: 'pp. 135 – 198',
+title: 'Circadian & Ultradian Sprints',
+summary:
+'Energy-aware work design: Energy-Aware Work Design (pp. 41–43) on energy vs time and the ultradian performance oscillation; Cognitive Demand Taxonomy (pp. 44–47) separating high-focus from low-focus work, the 90-minute sprint, and active recovery; Scheduling Synthesis & Focus Protection (pp. 48–50) covering analytical scheduling, leaks, and the diurnal energy audit; Real-World Monastic Schedules (pp. 51–54) with the monastic day template, collaborative roles, and sprint checklists.',
+pages: 'pp. 41 – 54',
+},
+{
+number: '04',
+title: 'The Cognitive Ergonomics Reset',
+summary:
+'The tactical overhaul: The Architectural Reset Protocol (pp. 55–57) executing physical, digital, file, and ledger overhauls; The 7-Day Action Protocol (p. 58), a daily step-by-step restoration plan; The Ergonomic Operator’s Manifesto (p. 59) stating the core commitments and commandments; ZenVero Epilogue & Horizon (p. 60) closing with the sustainable synthesis benchmark.',
+pages: 'pp. 55 – 60',
 },
 ],
 preview: [
