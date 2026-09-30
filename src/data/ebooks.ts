@@ -797,6 +797,340 @@ preview: [
   },
 ],
 },
+{
+  id: 'zv-009',
+  title: 'AI Side-Hustle Playbook',
+  subtitle:
+    'A Practical System for Finding Problems, Building Offers, Getting Customers, and Systemizing the Work',
+  author: 'ZenVero Editorial Studio',
+  authorRole: 'Editorial Studio',
+
+  description:
+    'A practical playbook for finding problems, validating ideas, building useful AI-assisted offers, getting customers, delivering the work, and systemizing what works.',
+
+  longDescription:
+    'AI Side-Hustle Playbook is a practical, execution-focused guide to building an AI-assisted side hustle. It takes you from identifying useful problems and choosing a realistic path through validation, offer creation, customer outreach, delivery, and systemization. The book includes practical frameworks, checklists, worksheets, examples, and execution systems designed to move from idea to a repeatable workflow.',
+
+  category: 'Side Hustles',
+
+  coverImage:
+     '/covers/ai-side-hustle-playbook-cover.jpg',
+
+  coverPalette: {
+    bg: '#F2F0E8',
+    accent: '#6A7F45',
+    spine: '#D9D4C5',
+    badge: 'DIGITAL EDITION',
+  },
+
+  pdfFile:
+    'vault://zenvero-editions/AI-Side-Hustle-Playbook.pdf',
+
+  price: 0,
+  salePrice: 0,
+
+  pages: 77,
+  rating: 0,
+  reviewsCount: 0,
+
+  format: 'PDF',
+
+  featured: false,
+  bestSeller: false,
+  newRelease: true,
+
+  createdAt: '2026-09-29',
+
+  whoIsThisFor: [
+    'Students and beginners exploring AI-assisted side hustles',
+    'Freelancers and creators building practical offers',
+    'Independent builders looking for repeatable workflows',
+    'Anyone who wants to validate before overbuilding',
+  ],
+
+  chapters: [
+    {
+      number: '01',
+      title: 'Finding the Right Problems',
+      summary:
+        'Identify useful problems and opportunities worth exploring.',
+      pages: 'Ch. 1',
+    },
+    {
+      number: '02',
+      title: 'Choosing a Side-Hustle Path',
+      summary:
+        'Choose a practical direction based on the opportunity and your capabilities.',
+      pages: 'Ch. 2',
+    },
+    {
+      number: '03',
+      title: 'Validating the Idea',
+      summary:
+        'Test whether a problem and proposed solution deserve further effort.',
+      pages: 'Ch. 3',
+    },
+    {
+      number: '04',
+      title: 'Building the Offer',
+      summary:
+        'Turn a useful capability into a clear offer.',
+      pages: 'Ch. 4',
+    },
+    {
+      number: '05',
+      title: 'Finding Customers',
+      summary:
+        'Build practical approaches for reaching relevant potential customers.',
+      pages: 'Ch. 5',
+    },
+    {
+      number: '06',
+      title: 'Selling the Offer',
+      summary:
+        'Create a clearer path from interest to a concrete offer.',
+      pages: 'Ch. 6',
+    },
+    {
+      number: '07',
+      title: 'Delivering the Work',
+      summary:
+        'Deliver useful results manually and professionally.',
+      pages: 'Ch. 7',
+    },
+    {
+      number: '08',
+      title: 'Building Repeatable Workflows',
+      summary:
+        'Turn successful delivery into a repeatable process.',
+      pages: 'Ch. 8',
+    },
+    {
+      number: '09',
+      title: 'Systemizing the Side Hustle',
+      summary:
+        'Create systems around work that proves useful.',
+      pages: 'Ch. 9',
+    },
+    {
+      number: '10',
+      title: 'Improving the Operating Model',
+      summary:
+        'Refine the workflow, offer, and execution process.',
+      pages: 'Ch. 10',
+    },
+    {
+      number: '11',
+      title: 'Building Better Offers',
+      summary:
+        'Improve the usefulness and clarity of the offer.',
+      pages: 'Ch. 11',
+    },
+    {
+      number: '12',
+      title: 'Getting Better Customer Signals',
+      summary:
+        'Use conversations and real-world signals to improve direction.',
+      pages: 'Ch. 12',
+    },
+    {
+      number: '13',
+      title: 'Practical AI Workflows',
+      summary:
+        'Apply AI as leverage inside useful workflows.',
+      pages: 'Ch. 13',
+    },
+    {
+      number: '14',
+      title: 'Execution Systems',
+      summary:
+        'Build a more consistent system for execution.',
+      pages: 'Ch. 14',
+    },
+    {
+      number: '15',
+      title: 'Service-Based Paths',
+      summary:
+        'Explore practical service-oriented side-hustle models.',
+      pages: 'Ch. 15',
+    },
+    {
+      number: '16',
+      title: 'Digital Products',
+      summary:
+        'Understand the digital-product path and its validation process.',
+      pages: 'Ch. 16',
+    },
+    {
+      number: '17',
+      title: 'Audience and Distribution',
+      summary:
+        'Think about distribution and reaching the right people.',
+      pages: 'Ch. 17',
+    },
+    {
+      number: '18',
+      title: 'Delivery and Repeatability',
+      summary:
+        'Strengthen delivery and repeatable operating processes.',
+      pages: 'Ch. 18',
+    },
+    {
+      number: '19',
+      title: 'Systemization',
+      summary:
+        'Move useful recurring work toward stronger systems.',
+      pages: 'Ch. 19',
+    },
+    {
+      number: '20',
+      title: 'Master Execution Checklist',
+      summary:
+        'Bring the playbook together into a practical execution checklist.',
+      pages: 'Ch. 20',
+    },
+  ],
+
+  preview: [
+    {
+      pageNumber: 1,
+      image: '/previews/ai-side-hustle-playbook/preview-1.jpg',
+    },
+    {
+      pageNumber: 2,
+      image: '/previews/ai-side-hustle-playbook/preview-2.jpg',
+    },
+    {
+      pageNumber: 3,
+      image: '/previews/ai-side-hustle-playbook/preview-3.jpg',
+    },
+  ],
+},
+{
+  id: 'zv-010',
+  title: 'Career Positioning for the AI Era',
+  subtitle:
+    'Build Demonstrable Skills, Proof of Work, and a Career People Can Understand',
+  author: 'ZenVero Editorial Studio',
+  authorRole: 'Editorial Studio',
+
+  description:
+    'A practical guide to building career direction, demonstrable skills, proof of work, visibility, relationships, and an AI-ready professional identity.',
+
+  longDescription:
+    'Career Positioning for the AI Era is a practical guide to building a career around demonstrable capability rather than credentials or job titles alone. It takes you from choosing a direction and building an AI-ready skill stack to creating proof of work, becoming discoverable, developing professional relationships, and building a repeatable career operating system. The book includes frameworks, worksheets, templates, project systems, and AI prompts.',
+
+  category: 'Career',
+
+  coverImage:
+  '/covers/career-positioning-ai-era-cover.jpg',
+
+  coverPalette: {
+    bg: '#F2F0E8',
+    accent: '#6A7F45',
+    spine: '#D9D4C5',
+    badge: 'DIGITAL EDITION',
+  },
+
+  pdfFile:
+    'vault://zenvero-editions/Career-Positioning-for-the-AI-Era.pdf',
+
+  price: 0,
+  salePrice: 0,
+
+  pages: 210,
+  rating: 0,
+  reviewsCount: 0,
+
+  format: 'PDF',
+
+  featured: false,
+  bestSeller: false,
+  newRelease: true,
+
+  createdAt: '2026-09-29',
+
+  whoIsThisFor: [
+    'Students building career direction',
+    'Early-career professionals',
+    'Career switchers and freelancers',
+    'Independent builders who want visible proof of capability',
+  ],
+
+  chapters: [
+    {
+      number: '01',
+      title: 'The New Career Landscape',
+      summary:
+        'Understand the shift from credentials toward demonstrated capability.',
+      pages: 'Ch. 1',
+    },
+    {
+      number: '02',
+      title: 'Choose Your Direction',
+      summary:
+        'Build a practical method for choosing and testing a career direction.',
+      pages: 'Ch. 2',
+    },
+    {
+      number: '03',
+      title: 'Build Your AI-Ready Skill Stack',
+      summary:
+        'Create a skill stack that connects capability, leverage, and useful output.',
+      pages: 'Ch. 3',
+    },
+    {
+      number: '04',
+      title: 'Build Proof of Work',
+      summary:
+        'Turn skills into credible evidence through projects and documented work.',
+      pages: 'Ch. 4',
+    },
+    {
+      number: '05',
+      title: 'Make Your Work Discoverable',
+      summary:
+        'Build practical visibility around the work you can demonstrate.',
+      pages: 'Ch. 5',
+    },
+    {
+      number: '06',
+      title: 'Relationships, Outreach & Opportunity',
+      summary:
+        'Develop professional relationships and a practical opportunity pipeline.',
+      pages: 'Ch. 6',
+    },
+    {
+      number: '07',
+      title: 'The Career System That Compounds',
+      summary:
+        'Connect proof, visibility, relationships, and repeatable career systems.',
+      pages: 'Ch. 7',
+    },
+    {
+      number: '08',
+      title: 'Your 90-Day Career Plan',
+      summary:
+        'Turn the frameworks into a practical 90-day operating plan.',
+      pages: 'Ch. 8',
+    },
+  ],
+
+  preview: [
+    {
+      pageNumber: 1,
+      image: '/previews/career-positioning-ai-era/preview-1.jpg',
+    },
+    {
+      pageNumber: 2,
+      image: '/previews/career-positioning-ai-era/preview-2.jpg',
+    },
+    {
+      pageNumber: 3,
+      image: '/previews/career-positioning-ai-era/preview-3.jpg',
+    },
+  ],
+},
 ];
 
 export const INITIAL_ORDERS: OrderRecord[] = [
