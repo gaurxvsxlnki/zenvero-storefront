@@ -13,6 +13,7 @@ number: string;
 title: string;
 summary: string;
 pages: string;
+section?: string;
 }
 
 export interface PreviewSpread {
@@ -147,8 +148,8 @@ spine: '#D6CEC2',
 badge: 'EDITION NO. 01',
 },
 pdfFile: 'vault://zenvero-editions/calm-compounding-operator-v4.pdf',
-price: 38,
-salePrice: 29,
+price: 13.99,
+salePrice: 9.99,
 pages: 60,
 rating: 4.9,
 reviewsCount: 312,
@@ -546,9 +547,9 @@ subtitle: 'Structuring Deep Work, Physical Space, and Digital Tools for Peak Syn
 author: 'ZenVero Editorial Studio',
 authorRole: 'Editorial Studio',
 description:
-'A practical operating system for designing the physical workspace, digital environment, knowledge workflow, and energy rhythms required for sustained deep work — from environmental silence to a structured 7-day cognitive reset.',
+'A practical framework for designing the physical workspace, digital environment, knowledge system, and energy rhythms required for sustained deep work.',
 longDescription:
-'Book 05 of the System Architecture Series (Edition No. 05). Cognitive Ergonomics is a practical operating system for designing the physical workspace, digital environment, knowledge workflow, and energy rhythms required for sustained deep work. Its core thesis: "Productivity is rarely only a willpower problem—it is an environmental friction problem." The system is built for writers, researchers, programmers, designers, architects, engineers, students, and other knowledge workers who need sustained concentration and better control over fragmented digital workflows — a practical systems and operations guide, not generic motivational advice. "Silence the room and the screen before attempting to organize thoughts. Clean physical and digital geometry precedes profound synthesis." The four chapters are sequenced as one architecture: Chapter 01 establishes external visual and spatial silence (workspace audits, desk architecture, badge eradication, a 4-tier file hierarchy); Chapter 02 constructs internal knowledge architecture with a simplified Zettelkasten ledger that converts captured information into permanent knowledge assets using Markdown and plain-text workflows; Chapter 03 aligns work with biological energy through energy-aware scheduling and structured 90-minute focus sprints; Chapter 04 provides the tactical 7-day cognitive ergonomics reset. Reduce environmental and digital friction, build a distraction-resistant workspace, match demanding work with available energy, and protect deep work from context switching.',
+'Your environment shapes how you work. Cognitive Ergonomics gives you a practical system for reducing distractions, organizing your workspace and digital files, turning scattered information into usable knowledge, scheduling demanding work around your energy, and protecting deep-focus time. Finish with a structured 7-day reset designed to turn a chaotic workflow into a calmer, more deliberate system for getting meaningful work done.',
 category: 'Productivity',
 coverImage:
 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=900&q=85',
@@ -559,16 +560,15 @@ spine: '#D1CEC7',
 badge: 'EDITION NO. 05',
 },
 pdfFile: 'vault://zenvero-editions/cognitive-ergonomics.pdf',
-price: 30,
-salePrice: 25,
-pages: 198,
+price: 12.99,
+salePrice: 7.99,
+pages: 60,
 rating: 4.9,
 reviewsCount: 189,
 format: 'PDF',
 featured: false,
 bestSeller: false,
 newRelease: true,
-createdAt: '2025-02-12',
 whoIsThisFor: [
 'Writers and authors',
 'Researchers',
@@ -582,31 +582,139 @@ whoIsThisFor: [
 chapters: [
 {
 number: '01',
-title: 'Visual Silence & Desktop Architecture',
+title: 'The Anatomy of Environmental Friction',
 summary:
-'Sequenced from external friction to verified calm: The Anatomy of Environmental Friction (pp. 06–07) on willpower vs space and micro-distractions & cognitive leaks; Physical Desk Architecture (pp. 08–12) covering the three perceptual zones, dual-surface desks, and lighting & clearance; Digital Desktop Architecture (pp. 13–18) treating the desktop as mind projection, badge eradication, and the 4-tier file hierarchy; Workspace Audits & Diagnostics (pp. 19–22) with the 60-minute detox, physical & digital scorecards, and the monastic baseline.',
-pages: 'pp. 06 – 22',
+'Willpower vs Space; Micro-Distractions & Cognitive Leaks.',
+pages: 'pp. 06 – 07',
+section: 'Chapter 01 — Visual Silence & Desktop Architecture',
 },
 {
 number: '02',
-title: 'The Zettelkasten Ledger Simplified',
+title: 'Physical Desk Architecture',
 summary:
-'From accumulation to synthesis: The Collector’s Fallacy (pp. 23–25) on accumulation vs synthesis and the knowledge conversion cycle; The Atomic Note Standard (pp. 26–28) defining the anatomy of single ideas and the three-tier note taxonomy; Capture to Permanent Synthesis (pp. 29–33) moving notes from fleeting inbox through literature translation to permanent assets; Plain-Text Infrastructure & Workflows (pp. 34–38) with Markdown sovereignty, the 4-step reading pipeline, and ledger setup; Cadence & Review (pp. 39–40) on daily ledger checklists and the active compiler paradigm.',
-pages: 'pp. 23 – 40',
+'The Three Perceptual Zones; Dual-Surface Desks; Lighting & Clearance.',
+pages: 'pp. 08 – 12',
+section: 'Chapter 01 — Visual Silence & Desktop Architecture',
 },
 {
 number: '03',
-title: 'Circadian & Ultradian Sprints',
+title: 'Digital Desktop Architecture',
 summary:
-'Energy-aware work design: Energy-Aware Work Design (pp. 41–43) on energy vs time and the ultradian performance oscillation; Cognitive Demand Taxonomy (pp. 44–47) separating high-focus from low-focus work, the 90-minute sprint, and active recovery; Scheduling Synthesis & Focus Protection (pp. 48–50) covering analytical scheduling, leaks, and the diurnal energy audit; Real-World Monastic Schedules (pp. 51–54) with the monastic day template, collaborative roles, and sprint checklists.',
-pages: 'pp. 41 – 54',
+'Desktop as Mind Projection; Badge Eradication; 4-Tier File Hierarchy.',
+pages: 'pp. 13 – 18',
+section: 'Chapter 01 — Visual Silence & Desktop Architecture',
 },
 {
 number: '04',
-title: 'The Cognitive Ergonomics Reset',
+title: 'Workspace Audits & Diagnostics',
 summary:
-'The tactical overhaul: The Architectural Reset Protocol (pp. 55–57) executing physical, digital, file, and ledger overhauls; The 7-Day Action Protocol (p. 58), a daily step-by-step restoration plan; The Ergonomic Operator’s Manifesto (p. 59) stating the core commitments and commandments; ZenVero Epilogue & Horizon (p. 60) closing with the sustainable synthesis benchmark.',
-pages: 'pp. 55 – 60',
+'60-Minute Detox; Physical & Digital Scorecards; Monastic Baseline.',
+pages: 'pp. 19 – 22',
+section: 'Chapter 01 — Visual Silence & Desktop Architecture',
+},
+{
+number: '05',
+title: 'The Collector’s Fallacy',
+summary:
+'Accumulation vs Synthesis; The Knowledge Conversion Cycle.',
+pages: 'pp. 23 – 25',
+section: 'Chapter 02 — The Zettelkasten Ledger Simplified',
+},
+{
+number: '06',
+title: 'The Atomic Note Standard',
+summary:
+'Anatomy of Single Ideas; The Three-Tier Note Taxonomy.',
+pages: 'pp. 26 – 28',
+section: 'Chapter 02 — The Zettelkasten Ledger Simplified',
+},
+{
+number: '07',
+title: 'Capture to Permanent Synthesis',
+summary:
+'Fleeting Inbox; Literature Translation; Permanent Assets.',
+pages: 'pp. 29 – 33',
+section: 'Chapter 02 — The Zettelkasten Ledger Simplified',
+},
+{
+number: '08',
+title: 'Plain-Text Infrastructure & Workflows',
+summary:
+'Markdown Sovereignty; 4-Step Reading Pipeline; Ledger Setup.',
+pages: 'pp. 34 – 38',
+section: 'Chapter 02 — The Zettelkasten Ledger Simplified',
+},
+{
+number: '09',
+title: 'Cadence & Review',
+summary:
+'Daily Ledger Checklists; The Active Compiler Paradigm.',
+pages: 'pp. 39 – 40',
+section: 'Chapter 02 — The Zettelkasten Ledger Simplified',
+},
+{
+number: '10',
+title: 'Energy-Aware Work Design',
+summary:
+'Energy vs Time; The Ultradian Performance Oscillation.',
+pages: 'pp. 41 – 43',
+section: 'Chapter 03 — Circadian & Ultradian Sprints',
+},
+{
+number: '11',
+title: 'Cognitive Demand Taxonomy',
+summary:
+'High-Focus vs Low-Focus Work; The 90-Minute Sprint; Active Recovery.',
+pages: 'pp. 44 – 47',
+section: 'Chapter 03 — Circadian & Ultradian Sprints',
+},
+{
+number: '12',
+title: 'Scheduling Synthesis & Focus Protection',
+summary:
+'Analytical Scheduling; Leaks; Diurnal Energy Audit.',
+pages: 'pp. 48 – 50',
+section: 'Chapter 03 — Circadian & Ultradian Sprints',
+},
+{
+number: '13',
+title: 'Real-World Monastic Schedules',
+summary:
+'The Monastic Day Template; Collaborative Roles; Sprint Checklists.',
+pages: 'pp. 51 – 54',
+section: 'Chapter 03 — Circadian & Ultradian Sprints',
+},
+{
+number: '14',
+title: 'The Architectural Reset Protocol',
+summary:
+'Physical, Digital, File, and Ledger Overhauls.',
+pages: 'pp. 55 – 57',
+section: 'Chapter 04 — The Cognitive Ergonomics Reset',
+},
+{
+number: '15',
+title: 'The 7-Day Action Protocol',
+summary:
+'Daily Step-by-Step Restoration Plan.',
+pages: 'p. 58',
+section: 'Chapter 04 — The Cognitive Ergonomics Reset',
+},
+{
+number: '16',
+title: 'The Ergonomic Operator’s Manifesto',
+summary:
+'Core Commitments & Commandments.',
+pages: 'p. 59',
+section: 'Chapter 04 — The Cognitive Ergonomics Reset',
+},
+{
+number: '17',
+title: 'ZenVero Epilogue & Horizon',
+summary:
+'The Sustainable Synthesis Benchmark.',
+pages: 'p. 60',
+section: 'Chapter 04 — The Cognitive Ergonomics Reset',
 },
 ],
 preview: [
@@ -812,6 +920,340 @@ preview: [
     image: '/previews/demo/preview-3.jpg',
   },
 ],
+},
+{
+  id: 'zv-009',
+  title: 'AI Side-Hustle Playbook',
+  subtitle:
+    'A Practical System for Finding Problems, Building Offers, Getting Customers, and Systemizing the Work',
+  author: 'ZenVero Editorial Studio',
+  authorRole: 'Editorial Studio',
+
+  description:
+    'A practical playbook for finding problems, validating ideas, building useful AI-assisted offers, getting customers, delivering the work, and systemizing what works.',
+
+  longDescription:
+    'AI Side-Hustle Playbook is a practical, execution-focused guide to building an AI-assisted side hustle. It takes you from identifying useful problems and choosing a realistic path through validation, offer creation, customer outreach, delivery, and systemization. The book includes practical frameworks, checklists, worksheets, examples, and execution systems designed to move from idea to a repeatable workflow.',
+
+  category: 'Side Hustles',
+
+  coverImage:
+     '/covers/ai-side-hustle-playbook-cover.jpg',
+
+  coverPalette: {
+    bg: '#F2F0E8',
+    accent: '#6A7F45',
+    spine: '#D9D4C5',
+    badge: 'DIGITAL EDITION',
+  },
+
+  pdfFile:
+    'vault://zenvero-editions/AI-Side-Hustle-Playbook.pdf',
+
+  price: 0,
+  salePrice: 0,
+
+  pages: 77,
+  rating: 0,
+  reviewsCount: 0,
+
+  format: 'PDF',
+
+  featured: false,
+  bestSeller: false,
+  newRelease: true,
+
+  createdAt: '2026-09-29',
+
+  whoIsThisFor: [
+    'Students and beginners exploring AI-assisted side hustles',
+    'Freelancers and creators building practical offers',
+    'Independent builders looking for repeatable workflows',
+    'Anyone who wants to validate before overbuilding',
+  ],
+
+  chapters: [
+    {
+      number: '01',
+      title: 'Finding the Right Problems',
+      summary:
+        'Identify useful problems and opportunities worth exploring.',
+      pages: 'Ch. 1',
+    },
+    {
+      number: '02',
+      title: 'Choosing a Side-Hustle Path',
+      summary:
+        'Choose a practical direction based on the opportunity and your capabilities.',
+      pages: 'Ch. 2',
+    },
+    {
+      number: '03',
+      title: 'Validating the Idea',
+      summary:
+        'Test whether a problem and proposed solution deserve further effort.',
+      pages: 'Ch. 3',
+    },
+    {
+      number: '04',
+      title: 'Building the Offer',
+      summary:
+        'Turn a useful capability into a clear offer.',
+      pages: 'Ch. 4',
+    },
+    {
+      number: '05',
+      title: 'Finding Customers',
+      summary:
+        'Build practical approaches for reaching relevant potential customers.',
+      pages: 'Ch. 5',
+    },
+    {
+      number: '06',
+      title: 'Selling the Offer',
+      summary:
+        'Create a clearer path from interest to a concrete offer.',
+      pages: 'Ch. 6',
+    },
+    {
+      number: '07',
+      title: 'Delivering the Work',
+      summary:
+        'Deliver useful results manually and professionally.',
+      pages: 'Ch. 7',
+    },
+    {
+      number: '08',
+      title: 'Building Repeatable Workflows',
+      summary:
+        'Turn successful delivery into a repeatable process.',
+      pages: 'Ch. 8',
+    },
+    {
+      number: '09',
+      title: 'Systemizing the Side Hustle',
+      summary:
+        'Create systems around work that proves useful.',
+      pages: 'Ch. 9',
+    },
+    {
+      number: '10',
+      title: 'Improving the Operating Model',
+      summary:
+        'Refine the workflow, offer, and execution process.',
+      pages: 'Ch. 10',
+    },
+    {
+      number: '11',
+      title: 'Building Better Offers',
+      summary:
+        'Improve the usefulness and clarity of the offer.',
+      pages: 'Ch. 11',
+    },
+    {
+      number: '12',
+      title: 'Getting Better Customer Signals',
+      summary:
+        'Use conversations and real-world signals to improve direction.',
+      pages: 'Ch. 12',
+    },
+    {
+      number: '13',
+      title: 'Practical AI Workflows',
+      summary:
+        'Apply AI as leverage inside useful workflows.',
+      pages: 'Ch. 13',
+    },
+    {
+      number: '14',
+      title: 'Execution Systems',
+      summary:
+        'Build a more consistent system for execution.',
+      pages: 'Ch. 14',
+    },
+    {
+      number: '15',
+      title: 'Service-Based Paths',
+      summary:
+        'Explore practical service-oriented side-hustle models.',
+      pages: 'Ch. 15',
+    },
+    {
+      number: '16',
+      title: 'Digital Products',
+      summary:
+        'Understand the digital-product path and its validation process.',
+      pages: 'Ch. 16',
+    },
+    {
+      number: '17',
+      title: 'Audience and Distribution',
+      summary:
+        'Think about distribution and reaching the right people.',
+      pages: 'Ch. 17',
+    },
+    {
+      number: '18',
+      title: 'Delivery and Repeatability',
+      summary:
+        'Strengthen delivery and repeatable operating processes.',
+      pages: 'Ch. 18',
+    },
+    {
+      number: '19',
+      title: 'Systemization',
+      summary:
+        'Move useful recurring work toward stronger systems.',
+      pages: 'Ch. 19',
+    },
+    {
+      number: '20',
+      title: 'Master Execution Checklist',
+      summary:
+        'Bring the playbook together into a practical execution checklist.',
+      pages: 'Ch. 20',
+    },
+  ],
+
+  preview: [
+    {
+      pageNumber: 1,
+      image: '/previews/ai-side-hustle-playbook/preview-1.jpg',
+    },
+    {
+      pageNumber: 2,
+      image: '/previews/ai-side-hustle-playbook/preview-2.jpg',
+    },
+    {
+      pageNumber: 3,
+      image: '/previews/ai-side-hustle-playbook/preview-3.jpg',
+    },
+  ],
+},
+{
+  id: 'zv-010',
+  title: 'Career Positioning for the AI Era',
+  subtitle:
+    'Build Demonstrable Skills, Proof of Work, and a Career People Can Understand',
+  author: 'ZenVero Editorial Studio',
+  authorRole: 'Editorial Studio',
+
+  description:
+    'A practical guide to building career direction, demonstrable skills, proof of work, visibility, relationships, and an AI-ready professional identity.',
+
+  longDescription:
+    'Career Positioning for the AI Era is a practical guide to building a career around demonstrable capability rather than credentials or job titles alone. It takes you from choosing a direction and building an AI-ready skill stack to creating proof of work, becoming discoverable, developing professional relationships, and building a repeatable career operating system. The book includes frameworks, worksheets, templates, project systems, and AI prompts.',
+
+  category: 'Career',
+
+  coverImage:
+  '/covers/career-positioning-ai-era-cover..jpg',
+
+  coverPalette: {
+    bg: '#F2F0E8',
+    accent: '#6A7F45',
+    spine: '#D9D4C5',
+    badge: 'DIGITAL EDITION',
+  },
+
+  pdfFile:
+    'vault://zenvero-editions/Career-Positioning-for-the-AI-Era.pdf',
+
+  price: 0,
+  salePrice: 0,
+
+  pages: 210,
+  rating: 0,
+  reviewsCount: 0,
+
+  format: 'PDF',
+
+  featured: false,
+  bestSeller: false,
+  newRelease: true,
+
+  createdAt: '2026-09-29',
+
+  whoIsThisFor: [
+    'Students building career direction',
+    'Early-career professionals',
+    'Career switchers and freelancers',
+    'Independent builders who want visible proof of capability',
+  ],
+
+  chapters: [
+    {
+      number: '01',
+      title: 'The New Career Landscape',
+      summary:
+        'Understand the shift from credentials toward demonstrated capability.',
+      pages: 'Ch. 1',
+    },
+    {
+      number: '02',
+      title: 'Choose Your Direction',
+      summary:
+        'Build a practical method for choosing and testing a career direction.',
+      pages: 'Ch. 2',
+    },
+    {
+      number: '03',
+      title: 'Build Your AI-Ready Skill Stack',
+      summary:
+        'Create a skill stack that connects capability, leverage, and useful output.',
+      pages: 'Ch. 3',
+    },
+    {
+      number: '04',
+      title: 'Build Proof of Work',
+      summary:
+        'Turn skills into credible evidence through projects and documented work.',
+      pages: 'Ch. 4',
+    },
+    {
+      number: '05',
+      title: 'Make Your Work Discoverable',
+      summary:
+        'Build practical visibility around the work you can demonstrate.',
+      pages: 'Ch. 5',
+    },
+    {
+      number: '06',
+      title: 'Relationships, Outreach & Opportunity',
+      summary:
+        'Develop professional relationships and a practical opportunity pipeline.',
+      pages: 'Ch. 6',
+    },
+    {
+      number: '07',
+      title: 'The Career System That Compounds',
+      summary:
+        'Connect proof, visibility, relationships, and repeatable career systems.',
+      pages: 'Ch. 7',
+    },
+    {
+      number: '08',
+      title: 'Your 90-Day Career Plan',
+      summary:
+        'Turn the frameworks into a practical 90-day operating plan.',
+      pages: 'Ch. 8',
+    },
+  ],
+
+  preview: [
+    {
+      pageNumber: 1,
+      image: '/previews/career-positioning-ai-era/preview-1.jpg',
+    },
+    {
+      pageNumber: 2,
+      image: '/previews/career-positioning-ai-era/preview-2.jpg',
+    },
+    {
+      pageNumber: 3,
+      image: '/previews/career-positioning-ai-era/preview-3.jpg',
+    },
+  ],
 },
 ];
 
